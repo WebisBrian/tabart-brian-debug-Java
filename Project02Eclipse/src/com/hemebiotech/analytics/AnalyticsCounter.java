@@ -15,26 +15,32 @@ public class AnalyticsCounter {
 		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
 		String line = reader.readLine();
 
-		int i = 0;	
-		int headCount = 0;
-		
+			
 		// Calculate the sum of each symptom using a loop.
+		int i = 0;
 		while (line != null) {
-			i++;	
-			System.out.println("symptom from file: " + line);
-			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
-			}
-			else if (line.equals("rush")) {
-				rashCount++;
-			}
-			else if (line.contains("pupils")) {
-				pupilCount++;
-			}
-			// Get another symptom.
-			line = reader.readLine();
+		    i++;
+		    switch (line) {
+		        case "headache":
+		            headacheCount++;
+		            break;
+		        case "rash":
+		            rashCount++;
+		            break;
+		        case "dialated pupils":
+		            pupilCount++;
+		            break;
+		        default:
+		            break;
+		    }
+		    // Get another symptom
+		    line = reader.readLine();
 		}
+		
+		System.out.println("Symptoms inventory :\n");
+		System.out.println("Headache : " + headacheCount);
+		System.out.println("Rash : " + rashCount);
+		System.out.println("Dialated pupils : " + pupilCount);
 		
 		// Generate a file summarizing the number of occurrences for each symptom.
 		FileWriter writer = new FileWriter ("result.out");
