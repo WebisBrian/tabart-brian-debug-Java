@@ -5,43 +5,42 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 public class AnalyticsCounter {
+	// Initialize each symptom
 	private static int headacheCount = 0;	
 	private static int rashCount = 0;		
-	private static int dialatedPupilsCount = 0;		
+	private static int pupilCount = 0;		
 	
 	public static void main(String args[]) throws Exception {
-		// Configure the read of symptoms.txt
+		// Read the file "symptoms.txt
 		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
 		String line = reader.readLine();
 
 		int i = 0;	
+		int headCount = 0;
 		
+		// Calculate the sum of each symptom using a loop.
 		while (line != null) {
-			// Increment to get the next line
-			i++;
+			i++;	
 			System.out.println("symptom from file: " + line);
-			
 			if (line.equals("headache")) {
-				headacheCount++;
-				System.out.println("-> number of headaches: " + headacheCount);
+				headCount++;
+				System.out.println("number of headaches: " + headCount);
 			}
-			else if (line.equals("rash")) {
+			else if (line.equals("rush")) {
 				rashCount++;
-				System.out.println("-> number of rash: " + rashCount);
 			}
-			else if (line.contains("dialated pupils")) {
-				dialatedPupilsCount++;
-				System.out.println("-> number of dialated pupils: " + dialatedPupilsCount);
+			else if (line.contains("pupils")) {
+				pupilCount++;
 			}
-
-			line = reader.readLine();	// get another symptom
+			// Get another symptom.
+			line = reader.readLine();
 		}
 		
-		// next generate output
+		// Generate a file summarizing the number of occurrences for each symptom.
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + dialatedPupilsCount + "\n");
+		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
 	}
 }
