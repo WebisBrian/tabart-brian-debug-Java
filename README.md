@@ -3,7 +3,7 @@
 # Projet 2 – Débuggez une application Java
 
 ## 📌 Contexte
-Ce projet s’inscrit dans le parcours [Développeur d’application Java – OpenClassrooms](https://openclassrooms.com/fr/paths/533-developpeur-full-stack-java-et-angular).  
+Ce projet s’inscrit dans le parcours [Développeur d’application Java – OpenClassrooms](https://openclassrooms.com/fr/paths/883-developpeur-dapplication-java).  
 L’objectif est de reprendre le travail entamé par un autre développeur et de corriger les bugs d’une application Java existante.
 
 L’application doit :
