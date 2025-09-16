@@ -15,8 +15,8 @@ import java.util.TreeMap;
  */
 public class AnalyticsCounter {
 	
-	private ISymptomReader reader;
-	private ISymptomWriter writer;
+	private final ISymptomReader reader;
+	private final ISymptomWriter writer;
 	
 	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
 		this.reader = reader;
@@ -30,7 +30,7 @@ public class AnalyticsCounter {
      *         never {@code null}, but can be empty if no data is available.
      */
 	public List<String> getSymptoms() {		
-		return reader.GetSymptoms();
+		return reader.getSymptoms();
 	}
 	
     /**
