@@ -20,7 +20,7 @@ Thumbs.db
 *.log
 
 # Fichiers générés par l'app
-result.out
+# result.out
 
-# (Optionnel) si tu ne veux pas versionner les données d'entrée
+# Données d'entrée
 # symptoms.txt
