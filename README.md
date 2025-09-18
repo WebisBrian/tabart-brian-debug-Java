@@ -1,6 +1,8 @@
-# Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application
+
 
 # Projet 2 – Débuggez une application Java
+
+![Illustration du projet](images/readme/result.png)
 
 ## 📌 Contexte
 Ce projet s’inscrit dans le parcours [Développeur d’application Java – OpenClassrooms](https://openclassrooms.com/fr/paths/883-developpeur-dapplication-java).  
