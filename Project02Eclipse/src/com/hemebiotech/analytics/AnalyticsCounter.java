@@ -45,7 +45,7 @@ public class AnalyticsCounter {
      *         </ul>
      *         If the list is empty, the returned map will also be empty.
      */
-	public Map<String, Integer> countSymptoms(List<String> symptoms) {
+	public static Map<String, Integer> countSymptoms(List<String> symptoms) {
 		Map<String, Integer> counts = new HashMap<String, Integer>();
 
 		for (String s : symptoms) {

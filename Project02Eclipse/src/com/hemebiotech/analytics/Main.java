@@ -6,13 +6,21 @@ import java.util.Map;
 public class Main {
 
 	public static void main(String[] args) {
-		AnalyticsCounter analyticsCounter = new AnalyticsCounter(new ReadSymptomDataFromFile("symptoms.txt"), new WriteSymptomDataToFile("result.out"));
+        try {
+            AnalyticsCounter analyticsCounter = new AnalyticsCounter(
+                    new ReadSymptomDataFromFile("symptoms.txt"),
+                    new WriteSymptomDataToFile("result.out")
+            );
 
-		List<String> symptoms = analyticsCounter.getSymptoms();
-		Map<String, Integer> unsortedSymptoms = analyticsCounter.countSymptoms(symptoms);
-		Map<String, Integer> sortedSymptoms = analyticsCounter.sortSymptoms(unsortedSymptoms);
+            List<String> symptoms = analyticsCounter.getSymptoms();
+            Map<String, Integer> unsorted = analyticsCounter.countSymptoms(symptoms);
+            Map<String, Integer> sorted = analyticsCounter.sortSymptoms(unsorted);
+            analyticsCounter.writeSymptoms(sorted);
 
-		analyticsCounter.writeSymptoms(sortedSymptoms);
-	}
-
+            System.exit(0);
+        } catch (Exception e) {
+            System.err.println("[ERROR] " + e.getMessage());
+            System.exit(1);
+        }
+    }
 }
