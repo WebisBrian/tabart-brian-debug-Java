@@ -46,18 +46,13 @@ public class AnalyticsCounter {
      *         If the list is empty, the returned map will also be empty.
      */
 	public Map<String, Integer> countSymptoms(List<String> symptoms) {
-		HashMap<String, Integer> countSymptoms = new HashMap<String, Integer>();
-		
-		for (String symptom : symptoms) {
-			if (!countSymptoms.containsKey(symptom)) {
-				countSymptoms.put(symptom, 1);
-			} else {
-				int oldValue = countSymptoms.get(symptom);
-				int newValue = ++oldValue;
-				countSymptoms.replace(symptom, newValue);
-			}
+		Map<String, Integer> counts = new HashMap<String, Integer>();
+
+		for (String s : symptoms) {
+			if (s == null || s.isBlank()) continue;
+            counts.put(s, counts.getOrDefault(s, 0) +1);
 		}
-		return countSymptoms;
+		return counts;
 	}
 	
 	/**
