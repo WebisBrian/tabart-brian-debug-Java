@@ -1,0 +1,26 @@
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Builds / outputs
+out/
+bin/
+target/
+build/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Fichiers générés par l'app
+result.out
+
+# (Optionnel) si tu ne veux pas versionner les données d'entrée
+# symptoms.txt
